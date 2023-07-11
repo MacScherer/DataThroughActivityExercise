@@ -21,6 +21,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), secondActivity.class);
+
+                //PASSING DATA
+                intent.putExtra("name", "Mac");
+                intent.putExtra("age", 26);
+
                 startActivity(intent);
             }
         });
