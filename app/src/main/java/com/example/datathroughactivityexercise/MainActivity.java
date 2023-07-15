@@ -21,10 +21,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), secondActivity.class);
+                //INSTANCE OBJECT
+                User userObj = new User("Mac", "Mac@gmail.com");
 
                 //PASSING DATA
                 intent.putExtra("name", "Mac");
                 intent.putExtra("age", 26);
+                intent.putExtra("objUser", userObj);
+                // implements serializable on User class to transfere object
 
                 startActivity(intent);
             }

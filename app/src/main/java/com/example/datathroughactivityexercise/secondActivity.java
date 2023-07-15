@@ -16,11 +16,13 @@ public class secondActivity extends AppCompatActivity {
         textViewAge = findViewById(R.id.textViewAge);
 
         //RECOVER DATA
-        Bundle bundle = getIntent().getExtras();
-        String name = bundle.getString("name");
-        int age = bundle.getInt("age");
+        Bundle bundleData = getIntent().getExtras();
+        String name = bundleData.getString("name");
+        int age = bundleData.getInt("age");
+        // Recover object
+        User user = (User) bundleData.getSerializable("objUser");
 
-        textViewName.setText(name);
+        textViewName.setText(user.getEmail());
         textViewAge.setText(String.valueOf(age));
     }
 }
